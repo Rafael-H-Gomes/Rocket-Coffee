@@ -5,59 +5,129 @@
 }
 
 :root {
-  --primary-color: #8257e5;
-  --white: #fff;
-  --black: #000;
+  --background: #000;
+  --text-color: #fff;
+  --button: #8257e5;
+  --border: #29292e;
+  --border-menu-mobile: #a8a8b3;
+  --text-color-menu-mobile: #e1e1e6;
+  --bg-blur-1: url(/assets/blur-1.png);
+  --bg-blur-2: url(/assets/blur-2.png);
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
-  background: var(--black);
-  position: relative;
-}
-
-.bg-blur {
-  width: 100vw;
+  background: var(--bg-blur-1) bottom left no-repeat,
+    var(--bg-blur-2) top right no-repeat var(--background);
   height: 100vh;
-  position: absolute;
-}
-
-.blur-1 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.blur-2 {
-  position: absolute;
-  top: 0;
-  right: 0;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-top: 30px;
+  justify-content: space-between;
+  padding-top: 3rem;
+  width: 90%;
+  max-width: 918px;
 }
 
 .header nav > ul {
-  color: var(--white);
+  color: var(--text-color);
   font-family: Manrope;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 500;
   display: flex;
-  gap: 32px;
+  gap: 3.2rem;
   list-style: none;
-  padding: 0 135px;
 }
 
 .header-btn {
-  color: var(--white);
+  color: var(--text-color);
   font-family: Manrope;
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 800;
-  padding: 11px 38px;
-  border: 1px solid var(--primary-color);
-  border-radius: 6px;
+  padding: 1.1rem 3.8rem;
+  border: 0.1rem solid var(--button);
+  border-radius: 0.6rem;
   background: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.title {
+  color: var(--text-color);
+  font-family: Roboto, sans-serif;
+  font-size: 6rem;
+  width: 51.4rem;
+  text-align: center;
+  margin-top: 3.2rem;
+}
+
+.title:after {
+  content: "<Great Code/>";
+  color: transparent;
+  -webkit-text-stroke: 0.2rem var(--button);
+}
+
+.coffee-img {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 50%;
+  }
+  .coffee-img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 625px) {
+  body {
+    background: var(--bg-blur-1) bottom left no-repeat var(--background);
+  }
+  .logo {
+    width: 4rem;
+    height: 4rem;
+  }
+  .logo img {
+    width: 100%;
+    height: 100%;
+  }
+  .header nav > ul {
+    font-size: 1.4rem;
+    gap: 1.8rem;
+  }
+  .header-btn {
+    padding: 1rem 2rem;
+  }
+  .title {
+    margin-top: 6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  //layout mobile
+}
+
+@media (max-width: 431px) {
+  body {
+    background: url(/assets/blur-mobile.png) bottom center no-repeat,
+      var(--background);
+  }
 }
