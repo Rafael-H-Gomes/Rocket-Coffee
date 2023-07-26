@@ -44,6 +44,10 @@ body {
   max-width: 1021px;
 }
 
+.menu-section {
+  display: contents;
+}
+
 .logo {
   background: var(--logo-desk) center no-repeat;
   background-size: contain;
@@ -70,6 +74,10 @@ body {
   border: 0.1rem solid var(--button);
   border-radius: 0.6rem;
   background: none;
+}
+
+.menu-mobile {
+  display: none;
 }
 
 main {
@@ -155,15 +163,12 @@ main {
   }
 
   .menu-mobile {
+    display: block !important;
     width: 24px;
   }
 
-  .menu-section {
-    display: contents;
-  }
-
   .menu-section.on {
-    display: block;
+    display: block !important;
     position: absolute;
     top: 0;
     left: 0;
@@ -215,6 +220,38 @@ main {
   .menu-section.on nav ul li {
     border-bottom: 1px solid var(--border);
     padding: 16px 0 16px 30px;
+  }
+
+  main {
+    overflow: scroll;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7rem;
+    width: 54%;
+    padding-top: 7rem;
+  }
+
+  .main-text {
+    color: var(--text-color);
+    text-align: center;
+    font-family: Manrope;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .main-container .header-btn {
+    display: block;
+  }
+
+  .title {
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+    font-size: 5rem;
+    width: 36rem;
   }
 }
 
